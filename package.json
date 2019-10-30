@@ -4,8 +4,10 @@
     "main": "index.js",
     "scripts": {
         "start:build": "tsc -w",
-        "start:run": "nodemon build/index.js",
-        "start": "concurrently yarn:start:*"
+        "start:run": "nodemon dist/index.js",
+        "start": "concurrently yarn:start:*",
+        "test": "jest --watch",
+        "coverage": "jest --coverage"
     },
     "license": "MIT",
     "devDependencies": {
