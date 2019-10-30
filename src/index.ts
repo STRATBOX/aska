@@ -1,1 +1,1 @@
-console.log('{ message: "ping" }')
+console.log('{ message: "pong" }')

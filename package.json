@@ -6,6 +6,7 @@
         "start:build": "tsc -w",
         "start:run": "nodemon dist/index.js",
         "start": "concurrently yarn:start:*",
+        "dev": "nodemon src/index.ts",
         "test": "jest --watch",
         "coverage": "jest --coverage"
     },
@@ -20,5 +21,23 @@
         "nodemon": "^1.19.4",
         "prettier": "^1.18.2"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "nodemon": {
+        "restartable": "rs",
+        "ignore": [
+            ".git",
+            "node_modules/**/node_modules"
+        ],
+        "verbose": true,
+        "execMap": {
+            "ts": "node --require ts-node/register"
+        },
+        "watch": [
+            "src/"
+        ],
+        "env": {
+            "NODE_ENV": "development"
+        },
+        "ext": "js,json,ts"
+    }
 }
